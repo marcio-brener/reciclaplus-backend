@@ -6,7 +6,7 @@ import { agendamentoProviders } from './agendamento.providers';
 import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [DatabaseModule, forwardRef(() => AuthModule)],
   controllers: [AgendamentoController],
   providers: [
     ...agendamentoProviders,

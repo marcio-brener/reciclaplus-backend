@@ -7,7 +7,7 @@ import { tokenProviders } from './token.providers';
 import { TokenService } from './token.service';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [DatabaseModule, UsuarioModule, forwardRef(() => AuthModule)],
   controllers: [TokenController],
   providers: [
     ...tokenProviders,

@@ -7,7 +7,7 @@ import { HorariosProviders } from './horarios.providers';
 import { HorariosService } from './horarios.service';
 
 @Module({
-  imports: [DatabaseModule, TokenModule],
+  imports: [DatabaseModule, TokenModule, forwardRef(() => AuthModule)],
   controllers: [HorariosController],
   providers: [
     ...HorariosProviders,
